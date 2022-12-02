@@ -34,7 +34,7 @@ form.addEventListener('change', () => {
 
 const sendEmail = () => {
     buttonForm.innerText = "Enviando...."
-    fetch("https://formsubmit.co/ajax/migkeane28@gmail.com", {
+    fetch("https://formsubmit.co/ajax/miguelramirez88@hotmail.com", {
     method: "POST",
     headers: { 
         'Content-Type': 'application/json',
