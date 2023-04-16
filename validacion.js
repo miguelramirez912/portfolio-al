@@ -27,7 +27,7 @@ const valida = (input) => {
 }
 
 
-form.addEventListener('change', () => {
+form.addEventListener('input', () => {
     console.log("Evento change de form");
     buttonForm.disabled = !form.checkValidity();
 });
@@ -52,6 +52,10 @@ const sendEmail = () => {
         console.log(data);
         buttonForm.innerHTML = "Mensaje Enviado";
         form.reset();
+        setTimeout(() => {
+            buttonForm.innerHTML = "Enviar Mensaje";
+            buttonForm.disabled = true;
+        }, 2000);
     })
     .catch(error => console.log(error));
 }
@@ -62,11 +66,8 @@ form.addEventListener('submit', (e) => {
     sendEmail();
 })
 
-
-
-// Anki
 inputs.forEach( input => {
-    input.addEventListener('blur', (e) => {
+    input.addEventListener('change', (e) => {
         valida(e.target);
     });
 });
